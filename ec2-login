@@ -1,1 +1,1 @@
-ssh -i 키페어 ec2-user@퍼블릭iv
+ssh -i 키페어 ec2-user@퍼블릭ip
