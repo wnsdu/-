@@ -1,2 +1,15 @@
 ssh -i 키페어 ec2-user@퍼블릭ip
 <Data Function 이벤트 JSON>
+{
+    "Records":[
+        {
+            "s3":{
+                "bucket":{
+                    "name":"my-data-s3-103"
+                },
+                "object":{
+                    "key":"data/data.csv"
+                }
+            }
+        }]
+}
