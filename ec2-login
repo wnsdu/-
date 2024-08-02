@@ -13,3 +13,16 @@ ssh -i 키페어 ec2-user@퍼블릭ip
             }
         }]
 }
+<Event Bridge 이벤트 패턴>
+{
+  "source":["aws.s3"],
+  "detail-type":["Object Created"],
+  "detail":{
+    "bucket":{
+      "name":["my-data-s3-103"]
+    },
+    "object":{
+      "key": [{"prefix":"man/"},{"prefix":"woman/"}]
+    }
+  }
+}
