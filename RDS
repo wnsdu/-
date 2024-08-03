@@ -1,1 +1,27 @@
-
+VPC 생성
+ec2 생성
+탄력적 IP 후 ec2 재부팅
+ec2 port 2222로 접속
+s3버킷 생성
+버킷안에다가 배포파일 업로드
+sudo aws s3 cp s3://<버킷이름>/app.zip /tmp
+cd /tmp/로 tmp접속
+unzip app.py로 app.py를 압축해제
+mv app.py ~로 현재 경로에 app.py를 이동
+cd ~로 현재 경로에 이동하고 ls
+cd /tmp/로 tmp이동
+sudo unzip app.zip
+cd ~
+cd /tmp
+현재 디렉토리로 이동 후 sudo cp -R /tmp/app.zip /.(app.zip을 현경로로 저장)
+sudo cp -R /tmp/app.py .으로 현재경로에 저장
+unzip app.zip 압축해제
+sudo yum install -y python으로 python 설치
+yum install python3-pip로 pip 설치 python의3은 버전
+RDS 서브넷 그룹 생성 ->이름 ->설명 -> 가용영역 ->서브넷 추가
+보안 구룹 설치 인바운드 규칙 포트 범위 3306으로 서브넷 그룹 사용
+RDS 데이터베이스 설치 MYSQL로 변경 템플릿은 프리 티어로 변경 값이 싸서 스토리지는 magnetic 마스터 사용자 이름은 admin 기존 VPC 보안 그룹을 rds-sg로 초기 데이터베이스 이름 암호 자동 생성 후 생성
+마스터 암호 따로 메모장에 저장
+yum search mysql -> mariadb105-devel 찾고 복사 -> sudo yum install mariadb105-devel
+yum install maruadb105로  maruadb105 설치
+mysql -u admin -h database로 mysql을 사용할수있게
