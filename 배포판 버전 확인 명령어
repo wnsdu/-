@@ -1,3 +1,6 @@
 배포판 버전 확인 명령어
 grep . /etc/*-release
 cat /etc/*-release | uniq
+grep . /etc/issue*
+rpm (레드햇계열)
+rpm -qa *-release
