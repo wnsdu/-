@@ -1,0 +1,12 @@
+<apt-get-centOS>
+이것은 센트OS에서 패키지를 관리하기 위한 간단한 apt-get 인터페이스입니다. 우분투 세계에서 온 센트OS 채택자들에게 유용할 것입니다.
+<설치>
+curl https://raw.githubusercontent.com/dvershinin/apt-get-centos/master/apt-get.sh -o /usr/local/bin/apt-get
+chmod 0755 /usr/local/bin/apt-get
+<사용명령어>
+패키지 설치
+apt-get install nginx
+패키지 삭제
+apt-get remove nginx
+패키지 삭제
+apt-get purge nginx
