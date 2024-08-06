@@ -1,0 +1,14 @@
+<ssh 키 접속만 허용>
+/etc/ssh/sshd_config
+PasswordAuthentication no
+PermitRootLogin no
+---------------------
+<특정 HOST의 앙호접속 허용>
+/etc/ssh/sshd_config
+PasswordAuthentication no
+PermitRootLogin no
+Match Address 192.168.0.0/24 User gdhong
+    PasswordAuthentication yes
+Match Address 172.12.0.0/24 User gdhong
+    PasswordAuthentication yes
+Match all
