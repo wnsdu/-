@@ -1,5 +1,6 @@
+역할 ec2, Lambda, glue를 생성
 ssh -i 키페어 ec2-user@퍼블릭ip
-<Data Function 이벤트 JSON>
+<Data Function(Lambda) 이벤트 JSON>
 {
     "Records":[
         {
