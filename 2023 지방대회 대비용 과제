@@ -1,4 +1,3 @@
-역할 ec2, Lambda, glue를 생성
 ssh -i 키페어 ec2-user@퍼블릭ip
 <Data Function(Lambda) 이벤트 JSON>
 {
@@ -27,6 +26,7 @@ ssh -i 키페어 ec2-user@퍼블릭ip
     }
   }
 }
+역할 ec2, Lambda, glue를 생성
 EventBridge를 사용할 경우 s3 버킷에 있는 속성에서 Eventbridge를 활성화해야합니다
 Lambda를 테스트중 않된다면 구성 -> 권한 -> 역할 이름 -> 권한 정책 -> 권한 추가 -> 정책 연결 -> admin 추가
 SQS에서 메시지 전송이 않될경우 S3를 들어가 자신이 만든 S3안으로 들어간후 속성에서 EventBridge를 찾아 활성화시키기 전에 만들었는지 생각해봐야한다(S3에서 Eventbridge 활성화를 시켜야 SQS 메시지 전송이 되기 때문). Athena에 원래있던것들은 놔두고 새로운 쿼드를 만들어 똑같이 복붙하고 다시 실행해본다
