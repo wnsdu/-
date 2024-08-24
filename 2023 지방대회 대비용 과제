@@ -26,6 +26,15 @@ ssh -i 키페어 ec2-user@퍼블릭ip
     }
   }
 }
+Athena 코드
+(man)
+select count(*) from convert_output
+where sex='boy' and year between '1932'and '1967'
+
+(woman)
+select count(*) from convert_output
+where sex='girl' and year like '20%'
+
 역할 ec2, Lambda, glue를 생성
 EventBridge를 사용할 경우 s3 버킷에 있는 속성에서 Eventbridge를 활성화해야합니다
 Lambda를 테스트중 않된다면 구성 -> 권한 -> 역할 이름 -> 권한 정책 -> 권한 추가 -> 정책 연결 -> admin 추가
