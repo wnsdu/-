@@ -1,0 +1,27 @@
+서버
+systemctl restart nfs-server
+mkdir /test && chmod 777 /test
+vim /etc/exports
+```
+/test *(insecure,rw,sync,no_subtree_check,all_squash,nohide,fsid=1)
+```
+exportfs -ar
+systemctl restart nfs-server
+
+
+클라이언트(ubuntu)
+// 로컬 PC의 우분투에서 진행 접속후 세션은 유지된 상태여야된다.
+ssh -L 2049:localhost:2049 -L 111:localhost:111 -p 2022 ec2-user@<베스쳔 IP>
+
+클라이언트(ubuntu)
+// 로컬 PC의 우분투 터미널을 열어서 진행해주어야 한다.
+// 기존에 ssh 로그인한 우분투 터미널은 종료하면 안된다.
+apt-get install nfs-common
+mkdir /test1
+mount -t nfs localhost:/test /test1
+
+SSH 패스워드 설정
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sed -i 's/#Port 22/Port 2022/g' /etc/ssh/sshd_config
+echo 'password' | passwd --stdin ec2-user
+systemctl restart sshd
