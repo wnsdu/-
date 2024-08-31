@@ -11,5 +11,5 @@ account-blocklist:
 
 accounts:
   "<계정 ID>": {}
-
+이 코드를 노트에 복사 붙여넣기하고 계정 ID를 넣고 이름을 config.yaml.txt로 저장
 "<aws-nuke.exe 경로> -c <config.yaml.txt 경로> --no-dry-run" NUKE 실행 명령어
