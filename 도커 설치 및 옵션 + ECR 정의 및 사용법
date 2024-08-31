@@ -1,0 +1,30 @@
+도커 설치 명령어
+yum install docker -y
+systemctl restart docker
+usermod -aG docker ec2-user
+chmod 666 /var/run/docker.sock
+한번에 다 복사해서 붙여넣는걸 추천
+---------------------------------------------------------
+aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 654654173265.dkr.ecr.ap-northeast-2.amazonaws.com
+
+docker run -p 80:80 -d 654654173265.dkr.ecr.ap-northeast-2.amazonaws.com/skill
+s/ecr:latest
+
+
+-p 옵션
+docker run -p 80:80 -d 654654173265.dkr.ecr.ap-northeast-2.amazonaws.com/skill
+s/ecr:latest
+curl localhost를 사용하면 값이 나옴
+docker run -p 84:80 -d 654654173265.dkr.ecr.ap-northeast-2.amazonaws.com/skill
+s/ecr:latest
+curl localhost:84를 쳐야지 정해진 값이 나옴
+-d는 컨테이너 생성명령어
+-ECR(Amazon Elastic Container Registry)
+이미지를 저장해놓고 로그인을 한다면 언제든지 가지고와 실행할 수 있음
+생성 방식 
+리포지토리 이름을 정한다
+이름/ecr
+중요 이미지 스캔설정에서 푸시할 때 스캔
+이미지 가지고오는 방법
+푸시 명령 보기에서 나오는 명령어를 복붙 그리고 docker run -p 80:80 -d 계정 ID .dkr.ecr.ap-northeast-2.amazonaws.com/skills/ecr:latest을 치면 내 서버로 가지고옴
+curl localhost로 이미지 확인
