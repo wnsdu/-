@@ -1,0 +1,15 @@
+1. "https://github.com/rebuy-de/aws-nuke/releases/tag/v2.25.0" 접속
+2. "aws-nuke-v2.25.0-windows-amd64.zip" 설치
+3. "config.yaml.txt" 만들고 밑에꺼 넣기
+
+regions:
+- "ap-northeast-2"
+- "global"
+
+account-blocklist:
+- "999999999999" # production
+
+accounts:
+  "<계정 ID>": {}
+
+"<aws-nuke.exe 경로> -c <config.yaml.txt 경로> --no-dry-run" NUKE 실행 명령어
